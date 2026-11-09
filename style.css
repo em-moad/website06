@@ -1,0 +1,128 @@
+* Remove default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main page */
+
+body {
+    background: linear-gradient(135deg, #ffe0ec, #ffb6d0, #ffc8dd);
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+
+/* White rectangle */
+.container {
+    background-color: white;
+
+    width: 90%;
+    max-width: 450px;
+
+    padding: 50px 25px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Main message */
+h1 {
+    color: #e75480;
+    margin-bottom: 40px;
+    font-size: 28px;
+}
+
+/* Buttons container */
+.buttons {
+    position: relative;
+    height: 65px;
+}
+
+/* Both buttons */
+button {
+    border: none;
+    padding: 13px 30px;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* YES button */
+#yesBtn {
+    background-color: #ff69a6;
+    color: white;
+
+    position: absolute;
+    left: 15%;
+}
+
+
+/* NO button */
+#noBtn {
+    background-color: #dddddd;
+    color: #333333;
+
+    position: fixed;
+    left: 60%;
+    top: 50%;
+
+    z-index: 1000;
+    transition: 0.15s ease;
+}
+
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    bottom: -50px;
+
+    color: #ff4f91;
+    font-size: 25px;
+
+    animation: floatUp 3s linear infinite;
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    90% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Keep the rectangle above the hearts */
+.container {
+    position: relative;
+    z-index: 2;
+}
